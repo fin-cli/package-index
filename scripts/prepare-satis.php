@@ -23,7 +23,7 @@ function read_repos() {
 
 file_put_contents( JSON_PATH, json_encode( array(
 	"name" => "WP-CLI",
-	"homepage" => "http://wp-cli.org/package-index/",
+	"homepage" => "http://fp-cli.org/package-index/",
 	"require-all" => true,
 	"output-dir" => "web",
 	"repositories" => read_repos(),

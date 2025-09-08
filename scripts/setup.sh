@@ -7,7 +7,7 @@ cd web/
 git remote set-url origin $REMOTE_URL
 git fetch
 git checkout gh-pages
-git config user.email "wp-cli@scribu.net"
+git config user.email "fp-cli@scribu.net"
 git config user.name "WP-CLI Cron"
 
 # install Satis

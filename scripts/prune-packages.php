@@ -1,14 +1,14 @@
 <?php
 
-$wp_cli_packages = file(
+$fp_cli_packages = file(
 	dirname( __DIR__ ) . '/repositories.txt',
 	FILE_IGNORE_NEW_LINES
 );
 
 // Filter out lines for packages that are available on packagist.org
 
-$wp_cli_only = array_filter(
-	$wp_cli_packages,
+$fp_cli_only = array_filter(
+	$fp_cli_packages,
 	function ( $repo_url ) {
 		$package_name = str_replace( 'https://github.com/', '', $repo_url );
 		$packagist_res = json_decode(
@@ -37,5 +37,5 @@ $wp_cli_only = array_filter(
 );
 
 // Output the filtered list of repositories
-// which now only include packages that are on the wp-cli package index.
-echo join( "\n", $wp_cli_only ) . "\n";
+// which now only include packages that are on the fp-cli package index.
+echo join( "\n", $fp_cli_only ) . "\n";
