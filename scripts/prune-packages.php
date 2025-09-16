@@ -1,14 +1,14 @@
 <?php
 
-$fp_cli_packages = file(
+$fin_cli_packages = file(
 	dirname( __DIR__ ) . '/repositories.txt',
 	FILE_IGNORE_NEW_LINES
 );
 
 // Filter out lines for packages that are available on packagist.org
 
-$fp_cli_only = array_filter(
-	$fp_cli_packages,
+$fin_cli_only = array_filter(
+	$fin_cli_packages,
 	function ( $repo_url ) {
 		$package_name = str_replace( 'https://github.com/', '', $repo_url );
 		$packagist_res = json_decode(
@@ -37,5 +37,5 @@ $fp_cli_only = array_filter(
 );
 
 // Output the filtered list of repositories
-// which now only include packages that are on the fp-cli package index.
-echo join( "\n", $fp_cli_only ) . "\n";
+// which now only include packages that are on the fin-cli package index.
+echo join( "\n", $fin_cli_only ) . "\n";
